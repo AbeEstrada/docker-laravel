@@ -6,7 +6,7 @@ docker run --rm --interactive --tty --volume $PWD:/app composer create-project -
 docker-compose exec app php artisan preset react
 ```
 
-It creates two containers, `app` is a PHP container to run a dev server and the code, and `db` is a MySQL container. Both containers configuration are inside the `docker` directory.
+It creates two containers, `app` is a PHP 7.2 FPM container to run a dev server and the code, and `db` is a MySQL (latest) container. Both containers configuration are inside the `docker` directory.
 
 Then runs `composer` inside a container to install Laravel and all its dependencies.
 
