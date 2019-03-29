@@ -27,7 +27,7 @@ RUN docker-php-ext-install intl
 
 # Misc
 RUN apt-get install -y git zip unzip
-RUN docker-php-ext-install bcmath ctype calendar json mbstring opcache pdo pdo_mysql tokenizer zip
+RUN docker-php-ext-install bcmath calendar mbstring opcache pdo pdo_mysql zip
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
