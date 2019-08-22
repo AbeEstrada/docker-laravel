@@ -1,3 +1,3 @@
 .DS_Store
-/docker/data/*
+/.docker/data/*
 /www
