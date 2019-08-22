@@ -2,18 +2,20 @@ version: "3"
 
 services:
   app:
-    build: ./docker/php-fpm
+    build:
+      context: ./
+      dockerfile: .docker/app.dockerfile
     ports:
       - 8000:8000
     volumes:
       - ./www:/var/www/html
-      - ./docker/php-fpm/php.ini:/usr/local/etc/php/php.ini
+      - .docker/php.ini:/usr/local/etc/php/php.ini
   db:
-    image: mysql:latest
+    image: mysql:5.7
     ports:
       - 3306:3306
     volumes:
-      - ./docker/data:/var/lib/mysql
+      - .docker/data:/var/lib/mysql
     environment:
       MYSQL_USER: project
       MYSQL_PASSWORD: project
