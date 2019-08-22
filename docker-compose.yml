@@ -15,7 +15,13 @@ services:
     volumes:
       - ./docker/data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: toor
       MYSQL_USER: project
       MYSQL_PASSWORD: project
       MYSQL_DATABASE: project
+      MYSQL_ROOT_PASSWORD: toor
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8001:8080
